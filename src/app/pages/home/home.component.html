@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center container-form">
+    <div class="col-8 col-md-5 col-lg-5 d-flex justify-content-center div-container-form">
+        <form [formGroup]="formularioCliente" (ngSubmit)="onSubmit()" class="col-10">
+            <div class="continer-span-info">
+                <span class="span-info-form">Todos los campos son requeridos</span>
+            </div>
+            <div class="form-group div-container-input">
+                <label for="tipoDocumento" class="label-input">Tipo de Documento</label>
+                <select id="tipoDocumento" formControlName="tipoDocumento" class="form-control">
+                    <option value="">Selecciona un tipo de documento</option>
+                    <option value="C">Cédula de Ciudadanía</option>
+                    <option value="P">Pasaporte</option>
+                </select>
+                <div *ngIf="formularioCliente.get('tipoDocumento')?.invalid && formularioCliente.get('tipoDocumento')?.touched" class="text-danger">
+                    <small *ngIf="formularioCliente.get('tipoDocumento')?.hasError('required')">
+                        Este campo es requerido.
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-group div-container-input">
+                <label for="numeroDocumento" class="label-input">Número de Documento</label>
+                <input type="text" id="numeroDocumento" formControlName="numeroDocumento" class="form-control" appNumberMask>
+                <div *ngIf="formularioCliente.get('numeroDocumento')?.invalid && formularioCliente.get('numeroDocumento')?.touched" class="text-danger">
+                    <small *ngIf="formularioCliente.get('numeroDocumento')?.hasError('required')">
+                        Este campo es requerido.
+                    </small>
+                    <small *ngIf="formularioCliente.get('numeroDocumento')?.hasError('pattern')">
+                        El número de documento no es válido.
+                    </small>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class=" btn-form-submit"
+                    [ngClass]="{'disabled': formularioCliente.invalid}" 
+                    [disabled]="formularioCliente.invalid">Enviar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

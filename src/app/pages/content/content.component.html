@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center">
+    <form class="col-8 col-md-4">
+          <div>
+            <span>Información abasica</span>
+          </div>
+          <div class="div-container-input-info">
+            <label for="primerNombre" class="form-label-info"><strong>Primer Nombre</strong></label>
+            <input type="text" class="form-control input-tex-info" id="primerNombre" [value]="cliente?.primerNombre" disabled>
+          </div>
+          <div class="div-container-input-info">
+            <label for="segundoNombre" class="form-label-info"><strong>Segundo Nombre</strong></label>
+            <input type="text" class="form-control input-tex-info" id="segundoNombre" [value]="cliente?.segundoNombre" disabled>
+          </div>
+          <div class="div-container-input-info">
+            <label for="primerApellido" class="form-label-info"><strong>Primer Apellido</strong></label>
+            <input type="text" class="form-control input-tex-info" id="primerApellido" [value]="cliente?.primerApellido" disabled>
+          </div>
+          <div class="div-container-input-info">
+            <label for="segundoApellido" class="form-label-info"><strong>Segundo Apellido</strong></label>
+            <input type="text" class="form-control input-tex-info" id="segundoApellido" [value]="cliente?.segundoApellido" disabled>
+          </div>
+          <div class="div-container-input-info">
+            <label for="telefono" class="form-label-info"><strong>Teléfono</strong></label>
+            <input type="text" class="form-control input-tex-info" id="telefono" [value]="cliente?.telefono" disabled>
+          </div>
+          <div class="div-container-input-info">
+            <label for="direccion" class="form-label-info"><strong>Dirección</strong></label>
+            <input type="text" class="form-control input-tex-info" id="direccion" [value]="cliente?.direccion" disabled>
+          </div>
+          <div class="div-container-input-info">
+            <label for="ciudad" class="form-label-info"><strong>Ciudad</strong></label>
+            <input type="text" class="form-control input-tex-info" id="ciudad" [value]="cliente?.ciudad" disabled>
+          </div>
+        <div>
+          <button class="btn-form-submit" type="button" (click)="goBack()">Volver</button>
+        </div>
+    </form>
+  </div>
+  
